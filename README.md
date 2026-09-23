@@ -14,7 +14,7 @@ npx tsc --noEmit   # strict type check
 npx vitest run     # or: npm test
 ```
 
-The whole suite runs offline. Tests that need Postgres are skipped unless `DATABASE_URL` is set:
+The whole suite runs offline. Tests that need Postgres are skipped unless `DATABASE_URL` is set (CI sets it, with a Postgres service):
 
 ```bash
 docker run --rm -p 5432:5432 -e POSTGRES_PASSWORD=pg postgres:16
@@ -31,15 +31,15 @@ npm run test:mutation
 
 ### Python sidebars
 
-`python/` has the modules and pytest/Hypothesis tests behind the runnable Python sidebars.
+`python/` has the modules and tests behind every runnable Python sidebar: pytest and Hypothesis for the domain logic, a FastAPI app with a `ShopDriver` for Chapter 6's acceptance tests, and a SQLAlchemy repository with Testcontainers fixtures for Chapters 5 and 7.
 
 ```bash
 cd python
-pip install pytest hypothesis
-python -m pytest
+pip install -r requirements.txt
+python -m pytest -rs
 ```
 
-Not ported, because the sidebar is a deliberately partial sketch that depends on code the book doesn't show: Chapter 5 (Postgres container fixture), Chapter 6 (FastAPI `TestClient` driver), Chapter 7 (SQLAlchemy rollback fixture).
+The Postgres tests start a real `postgres:16` container through Testcontainers, so they need Docker. They're skipped without it. Set `DATABASE_URL` to use an existing database instead. CI runs them on every push.
 
 ## Chapter to file map
 

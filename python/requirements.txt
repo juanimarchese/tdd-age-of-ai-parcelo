@@ -1,0 +1,7 @@
+pytest
+hypothesis
+fastapi
+httpx
+sqlalchemy>=2.0
+psycopg[binary]
+testcontainers[postgres]
