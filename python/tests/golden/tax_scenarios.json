@@ -1,0 +1,9 @@
+[
+  {"order": {"subtotal": 2000, "type": "food", "roasted": true},
+   "state": "CA", "county": "LA"},
+  {"order": {"subtotal": 3000, "type": "gear", "isSubscription": true},
+   "state": "CO"},
+  {"order": {"subtotal": 12000, "type": "gear"}, "state": "NY"},
+  {"order": {"subtotal": 500, "type": "food", "roasted": false},
+   "state": "CA"}
+]

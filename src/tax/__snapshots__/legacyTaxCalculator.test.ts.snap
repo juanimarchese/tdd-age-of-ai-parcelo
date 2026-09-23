@@ -1,0 +1,10 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches approved tax output for known scenarios 1`] = `
+[
+  165,
+  44,
+  1065,
+  0,
+]
+`;

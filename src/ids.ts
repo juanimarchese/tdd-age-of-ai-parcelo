@@ -1,0 +1,9 @@
+import { randomUUID } from "node:crypto";
+
+export interface IdGenerator {
+  next(): string;
+}
+
+export const randomIds: IdGenerator = {
+  next: () => `ord_${randomUUID()}`,
+};
